@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding-right: 16px;
+    }
+    .menu {
+        background-color: #FFF8D4;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .functions{
+        background-color: #FFF8D4;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+</style>
+<head>
+    <title>All Honey</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<div align="center">
+    <br>
+    <h1>Honey</h1>
+    <br>
+</div>
+<div class="menu">
+    <table align="center" cellpadding="8">
+        <thead>
+        <tr>
+            <th th:include="select_food.html"></th>
+            <th>
+                <a href="/honey/create">Create New Honey</a>
+            </th>
+            <th>
+                <a href="/honey">Extra Functionality</a>
+            </th>
+        </tr>
+        </thead>
+    </table>
+</div>
+<div align="center">
+    <table>
+        <thead>
+        <tr>
+            <th class="functions">Interact</th>
+            <th>Id</th>
+            <th>Type</th>
+            <th>Flower</th>
+            <th>Health benefits</th>
+            <th>Vitamins</th>
+            <th>Tastiness</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="honey : ${allHoney}">
+            <td class="functions">
+                <a th:href="@{'/honey/edit/' + ${honey.id}}">Edit</a>
+                <br>
+                <a th:href="@{'/honey/delete/' + ${honey.id}}">Delete</a>
+                <br>
+            </td>
+            <td th:text="${honey.id}">id</td>
+            <td th:text="${honey.type}">type</td>
+            <td th:text="${honey.flower}">flower</td>
+            <td th:text="${honey.healthbenefit}">health benefit</td>
+            <td th:text="${honey.vitamins}">vitamin</td>
+            <td th:text="${honey.tastiness}">tastiness</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

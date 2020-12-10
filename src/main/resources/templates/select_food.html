@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Foods</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div align="center">
+    <form action="#" th:action="@{/honey}" method="get">
+        <select onchange="this.form.submit()">
+            <option selected value=""> Choose a food...</option>
+            <option th:value="honey" th:text="Honey"></option>
+            <option th:value="nut" th:text="Nuts"></option>
+            <option th:value="nut" th:text="Berries"></option>
+        </select>
+    </form>
+</div>
+</body>
+</html>
