@@ -1,4 +1,4 @@
-#Deploying a containarized java spring boot based web application onto the Amazon Web Services cloud
+# Deploying a containarized java spring boot based web application onto the Amazon Web Services cloud
 
 For the exact steps refer to the pdf file in the same folder.
 
